@@ -2,6 +2,8 @@
 
 This is a simple calculator web app designed to perform basic mathematical operations. It provides a user-friendly interface with the following features:
 
+![Screenshot (31)](https://github.com/GauravChavan18/Calculator/assets/107454180/33b7392f-6dfa-4664-9de6-c008c5c74c09)
+
 ## Features
 
 - **Input Display:** The app features a visually appealing input display at the top, showing the current equation or calculation.
