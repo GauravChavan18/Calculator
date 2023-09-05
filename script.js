@@ -4,6 +4,7 @@ let exp = "";
 let fno = true;
 let sno = true;
 let syb = true;
+let isneg = false;
 let ans;
 
 function getvalue(val) {
@@ -35,11 +36,14 @@ function deletefun() {
 }
 
 function setans() {
-    if (isNaN(exp.charAt(0)) || isNaN(exp.charAt(exp.length - 1))) {
+    if (isNaN(isNaN(exp.charAt(exp.length - 1)))) {
         alert("Enter Number First:")
     }
     else {
-
+        if (exp.charAt(0) === '-') {
+            exp = exp.substring(1, exp.length);
+            isneg = true;
+        }
         let op = exp.split("")
         let oparr = [];
 
@@ -51,6 +55,10 @@ function setans() {
 
         let arr = exp.split(/[-+x/]+/)
         let first = arr[0];
+        if (isneg) {
+            first = 0 - arr[0];
+        }
+
         let k = 1;
 
         for (let i = 0; i < oparr.length; i++) {
@@ -70,14 +78,15 @@ function setans() {
                 first = parseFloat(first) / parseFloat(second);
             }
         }
-        if (first.toString().length > 6 && isNaN(first)) {
+        if (first.toString().length > 6) {
             ans = first.toString().substring(0, 6);
         }
         else {
-            ans = first;
+            ans = first
         }
+
         inputvalue.innerHTML = ans;
-        exp = ans.toString();
+        exp = ans;
     }
 }
 
